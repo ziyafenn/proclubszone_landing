@@ -17,14 +17,18 @@
   "dependencies": {
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.10.0",
+    "gatsby-plugin-favicon": "^3.1.6",
     "gatsby-plugin-react-helmet": "^3.9.0",
     "gatsby-plugin-sass": "^3.1.0",
     "gatsby-plugin-sharp": "^2.13.3",
-    "gatsby-source-filesystem": "^2.10.0",
+    "gatsby-plugin-typography": "^2.11.0",
     "gatsby-transformer-sharp": "^2.11.0",
     "react": "^16.13.1",
+    "react-device-detect": "^1.15.0",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "sass": "^1.32.5"
+    "react-typography": "^0.16.19",
+    "sass": "^1.32.5",
+    "typography": "^0.16.19"
   }
 }
