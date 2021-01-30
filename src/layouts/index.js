@@ -28,7 +28,7 @@ const Layout = ({ children, data }) => (
       <meta property="og:image:height" content="1600" />
       <meta
         property="og:image"
-        content="https://storage.googleapis.com/pro-clubs-zone-v2.appspot.com/web/og-image.jpg"
+        content="https://storage.googleapis.com/pro-clubs-zone-v2.appspot.com/web/og-image-fb.jpg"
       />
       {/* <meta property="fb:app_id" content="365587397242588" /> */}
       <meta property="og:title" content={title} />
