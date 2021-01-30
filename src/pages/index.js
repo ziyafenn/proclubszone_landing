@@ -2,26 +2,15 @@ import React from "react";
 import styles from "../utils/index.scss";
 import apple from "../assets/apple-store-badge.png";
 import google from "../assets/google-play-badge.png";
-import playerCards from "../assets/player-cards.png";
-import league from "../assets/league.png";
-import transfer from "../assets/transfer.png";
-import match from "../assets/match.png";
-//import cardsBg from '../assets/cards-bg.png'
+import league from "../assets/league-preview.jpg";
 import logo from "../assets/logo.png";
 import logoSmall from "../assets/logo-small.png";
 import facebook from "../assets/icons/facebook.svg";
 import youtube from "../assets/icons/youtube.svg";
-//import instagram from '../assets/icons/instagram.svg'
 import twitch from "../assets/icons/twitch-alt.svg";
 import twitter from "../assets/icons/twitter.svg";
-//import close from "../assets/icons/close.svg";
 import { isAndroid, isIOS } from "react-device-detect";
-// import { OutboundLink } from 'gatsby-plugin-google-analytics'
-// import ReactGA from 'react-ga'
-
-// import Modal from 'react-modal'
-
-// Modal.setAppElement('#___gatsby')
+import Layout from "../layouts/index";
 
 export default class IndexPage extends React.Component {
   constructor() {
@@ -29,15 +18,8 @@ export default class IndexPage extends React.Component {
 
     this.state = {
       width: 0,
-      //	modalIsOpen: false,
     };
-    //	this.openModal = this.openModal.bind(this)
-    //	this.closeModal = this.closeModal.bind(this)
   }
-
-  // openModal() {
-  //	this.setState({ modalIsOpen: true })
-  // }
 
   closeModal() {
     this.setState({ modalIsOpen: false });
@@ -94,13 +76,13 @@ export default class IndexPage extends React.Component {
               type="image"
               className="button"
               src={apple}
-              onClick={() => this.handleItunes()}
+              //   onClick={() => this.handleItunes()}
             />
             <input
               type="image"
               className="button"
               src={google}
-              onClick={() => this.handleGooglePlay()}
+              //      onClick={() => this.handleGooglePlay()}
             />
           </div>
         ) : (
@@ -110,7 +92,7 @@ export default class IndexPage extends React.Component {
                 type="image"
                 className="button"
                 src={google}
-                onClick={() => this.handleGooglePlay()}
+                //      onClick={() => this.handleGooglePlay()}
               />
             )}
             {isIOS && (
@@ -118,7 +100,7 @@ export default class IndexPage extends React.Component {
                 type="image"
                 className="button"
                 src={apple}
-                onClick={() => this.handleItunes()}
+                //      onClick={() => this.handleItunes()}
               />
             )}
           </div>
@@ -143,17 +125,17 @@ export default class IndexPage extends React.Component {
 
     const description = (
       <div className="description">
-        <h1>Competitive Pro Clubs Leagues</h1>
+        <h1>Pro Clubs Leagues made easy</h1>
         <p>
-          Download the companion app, create or join a club and enjoy your
-          Virtual Pro career in FIFA Pro Clubs mode
+          Create your league in seconds, share the invitation link with clubs
+          and get started
         </p>
         {appStore}
       </div>
     );
 
     return (
-      <div>
+      <Layout>
         <div className="header">
           <div className="headerContent">
             <div className="logoContainer">
@@ -167,41 +149,33 @@ export default class IndexPage extends React.Component {
             <div className="rowContent">
               <div className="left">
                 <div className="rowText">
-                  <h2>
-                    Leagues & <br /> Competitions
-                  </h2>
+                  <h2>Comprehensive, yet easy league management</h2>
                   <p>
-                    PRZ league system includes all National and Regional Leagues
-                    of the World, which are further divided into Divisions.
+                    PRZ aims to help admins by offering all tools required to
+                    manage a Pro Clubs League.
                   </p>
+                  <h3>Set up a league with your own rules</h3>
                   <p>
-                    League matches are played at{" "}
-                    <b>21:45 and 22:30 in League's timezone</b> every:
+                    League admins have complete freedom to decide on a number of
+                    teams, matches and match times for the league.
                   </p>
-                  <ul>
-                    <li>Monday</li>
-                    <li>Tuesday</li>
-                    <li>Thursday</li>
-                  </ul>
+                  <h3>Let the PRZ do all boring bits</h3>
                   <p>
-                    Leagues are activated based on the number of clubs joined
-                    that league. The number of clubs determines how many
-                    divisions will be generated.
+                    PRZ will take care of player registration, match scheduling,
+                    publishing results and statistics.
                   </p>
+                  <h3>Effortless match submission</h3>
                   <p>
-                    If the League is not yet activated due to an insufficient
-                    number of clubs, the club will be moved to World League and
-                    play there until its League is activated.
+                    Clubs can submit a match within seconds and PRZ will take
+                    care of everything else.
                   </p>
+                  <h3>Match Conflict resolution</h3>
                   <p>
-                    There is no manual league administration, which allows PRZ
-                    to handle thousands of pro clubs playing simultaneously
-                    everywhere in the World.
+                    If two teams submit different result, league admin will be
+                    able to resolve a conflict with one tap.
                   </p>
-                  <p>
-                    National and international club competitions coming very
-                    soon!
-                  </p>
+                  <h3>In-depth statistics</h3>
+                  <p>Coming Soon.</p>
                 </div>
               </div>
               <div className="right">
@@ -209,157 +183,9 @@ export default class IndexPage extends React.Component {
               </div>
             </div>
           </div>
-          <div className="rowTwo">
-            {md && <Phone screen={transfer} />}
-            <div className="rowContent">
-              {!md ? (
-                <div className="left">
-                  <Phone screen={transfer} />
-                </div>
-              ) : (
-                <div className="left" />
-              )}
-              <div className="right">
-                <div className="rowText">
-                  <h2>Smart Transfer System</h2>
-                  <p>
-                    We know how hard it can be to find a right match between
-                    teams and players. With this in mind, we introduce you our
-                    Transfer System.
-                  </p>
-                  <p>
-                    Players can find a perfect club that will match their
-                    ambition and playing schedule; and managers can find a right
-                    players that will fit well into the team.
-                  </p>
-                  <p>
-                    Manage all transfer related inquiries from you personal
-                    Transfer Centre and never miss a thing.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="rowThree">
-            <div className="rowContent">
-              <div className="left">
-                <div className="rowText">
-                  <h2>Effortless Match and Stats submission</h2>
-                  <p>
-                    Managers can add match information with just a few taps from
-                    easy-to-use interface and not worry about the player stats
-                    submission anymore.
-                    <br />
-                    Every player will be able to add his match stats for
-                    himself.
-                  </p>
-                  <p>
-                    Players can add their performance stats literally with just
-                    two taps. Upload a performance screenshot and press submit.
-                    Yes, that’s all.
-                    <br />
-                    Our app will read the data from the screenshot and add stats
-                    for the player with no mistakes.
-                  </p>
-                  <p>It’s never been quicker and easier than this.</p>
-                </div>
-              </div>
-              <div className="right">
-                <Phone screen={match} />
-              </div>
-            </div>
-          </div>
-          <div className="rowFour">
-            {md && <img src={playerCards} className="rowImage" />}
-            <div className="rowContent">
-              {!md ? (
-                <div className="left">
-                  <img src={playerCards} className="rowImage" />
-                </div>
-              ) : (
-                <div className="left" />
-              )}
-              <div className="right">
-                <div className="rowText">
-                  <h2>Unique Player Cards</h2>
-                  <p>
-                    Every player in Pro Clubs Zone will have its very own card
-                    that will upgrade based on the amount of official matches.
-                    <br />
-                    Players can also earn a special cards by participating in
-                    various events or winning an award.
-                  </p>
-                  <p>
-                    Got the rare card? You can show it off by sharing it on any
-                    social network you want and let people know how special you
-                    are!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="rowFive">
-            <div className="rowContent">
-              <div className="row">
-                <div className="feature">
-                  <h3>Completely Automated World</h3>
-                  <p>
-                    In PRZ almost every aspect of the game is automated so you
-                    can concentrate on the things that matter.
-                  </p>
-                </div>
-                <div className="feature">
-                  <h3>Friendly Cups & Matches</h3>
-                  <p>
-                    Got spare time? Create or join a Friendly Cup in one tap or
-                    play a friendly match anytime you want.
-                  </p>
-                </div>
-              </div>
-              <div className="row">
-                <div className="feature">
-                  <h3>Cheat Detection</h3>
-                  <p>
-                    If opponent enters wrong information, system will
-                    automatically raise a red flag.
-                  </p>
-                </div>
-                <div className="feature">
-                  <h3>In-app messaging</h3>
-                  <p>
-                    Chat with your club, opponent managers or potential signings
-                    from one place.
-                  </p>
-                </div>
-              </div>
-              <div className="bottomText">
-                <h2>and more features to come!</h2>
-              </div>
-            </div>
-          </div>
           <div className="bottomDownload">
             <div className="rowContent">{description}</div>
           </div>
-          {/*
-					<div className="rowFive" id="cm">
-						<div className="rowContent">
-							<div>
-								<h2>We are looking for community managers</h2>
-								<p>
-									Love Pro Clubs, got spare time and want to
-									be a part of something big? <br />
-									We are looking for community managers (CM),
-									who will be a main contact persons for PRZ.
-								</p>
-								<p>
-									You can apply to become a CM by messaging us
-									on our <OutboundLink href="https://facebook.com/proclubszone">Facebook Page
-									</OutboundLink>
-								</p>
-							</div>
-						</div>
-					</div>
-				*/}
           <div className="footer">
             <div className="rowContent">
               <div className="follow">
@@ -408,7 +234,7 @@ export default class IndexPage extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 }

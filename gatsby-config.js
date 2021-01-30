@@ -1,7 +1,4 @@
 module.exports = {
-  siteMetadata: {
-    title: "Pro Clubs Zone",
-  },
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-sharp",

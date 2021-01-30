@@ -500,6 +500,7 @@ li {
 
 .bottomDownload {
   @extend %row;
+  z-index: 1;
   min-height: unset;
   background-color: $accent;
   p {
@@ -520,6 +521,7 @@ li {
   @extend %row;
   background-color: $dark;
   min-height: unset;
+  z-index: 1;
   .follow {
     @extend %flex;
     flex-direction: column;
