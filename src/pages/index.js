@@ -11,7 +11,7 @@ import facebook from "../assets/icons/facebook.svg";
 import youtube from "../assets/icons/youtube.svg";
 import twitch from "../assets/icons/twitch-alt.svg";
 import twitter from "../assets/icons/twitter.svg";
-import { isAndroid, isIOS, isBrowser } from "react-device-detect";
+import { isAndroid, isIOS } from "react-device-detect";
 import Layout from "../layouts/index";
 
 export default class IndexPage extends React.Component {
@@ -61,7 +61,7 @@ export default class IndexPage extends React.Component {
     const appStore = (
       <div className="download">
         <div className="storeButtons">
-          {(isBrowser || isIOS) && (
+          {(!isAndroid || isIOS) && (
             <input
               type="image"
               className="button"
@@ -74,7 +74,7 @@ export default class IndexPage extends React.Component {
               }}
             />
           )}
-          {(isBrowser || isAndroid) && (
+          {(!isIOS || isAndroid) && (
             <input
               type="image"
               className="button"
