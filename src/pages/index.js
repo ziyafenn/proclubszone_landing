@@ -2,14 +2,16 @@ import React from "react";
 import styles from "../utils/index.scss";
 import apple from "../assets/apple-store-badge.png";
 import google from "../assets/google-play-badge.png";
-import league from "../assets/league-preview.jpg";
+import leaguePreview from "../assets/league-preview.jpg";
+import league from "../assets/league.jpg";
+import home from "../assets/home.jpg";
 import logo from "../assets/logo.png";
 import logoSmall from "../assets/logo-small.png";
 import facebook from "../assets/icons/facebook.svg";
 import youtube from "../assets/icons/youtube.svg";
 import twitch from "../assets/icons/twitch-alt.svg";
 import twitter from "../assets/icons/twitter.svg";
-import { isAndroid, isIOS } from "react-device-detect";
+import { isAndroid, isIOS, isBrowser } from "react-device-detect";
 import Layout from "../layouts/index";
 
 export default class IndexPage extends React.Component {
@@ -51,18 +53,6 @@ export default class IndexPage extends React.Component {
     );
   }
 
-  handleItunes() {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "app_store",
-    });
-    window.open(
-      "https://itunes.apple.com/us/app/pro-clubs-zone/id1437881479?ls=1&mt=8",
-      "_self"
-    );
-    console.log("fired");
-  }
-
   render() {
     const { width } = this.state;
     const md = width > 768;
@@ -70,41 +60,29 @@ export default class IndexPage extends React.Component {
 
     const appStore = (
       <div className="download">
-        {!(isAndroid || isIOS) ? (
-          <div className="storeButtons">
+        <div className="storeButtons">
+          {(isBrowser || isIOS) && (
             <input
               type="image"
               className="button"
               src={apple}
-              //   onClick={() => this.handleItunes()}
+              onClick={() => {
+                window.open(
+                  "itms-apps://apps.apple.com/us/app/pro-clubs-zone/id1551138800",
+                  "_self"
+                );
+              }}
             />
+          )}
+          {(isBrowser || isAndroid) && (
             <input
               type="image"
               className="button"
               src={google}
               //      onClick={() => this.handleGooglePlay()}
             />
-          </div>
-        ) : (
-          <div className="storeButtons">
-            {isAndroid && (
-              <input
-                type="image"
-                className="button"
-                src={google}
-                //      onClick={() => this.handleGooglePlay()}
-              />
-            )}
-            {isIOS && (
-              <input
-                type="image"
-                className="button"
-                src={apple}
-                //      onClick={() => this.handleItunes()}
-              />
-            )}
-          </div>
-        )}
+          )}
+        </div>
       </div>
     );
 
@@ -149,12 +127,43 @@ export default class IndexPage extends React.Component {
             <div className="rowContent">
               <div className="left">
                 <div className="rowText">
-                  <h2>Comprehensive, yet easy league management</h2>
+                  <h2>Professional league management</h2>
                   <p>
-                    PRZ aims to help admins by offering all tools required to
-                    manage a Pro Clubs League.
+                    Do you have an established league that you want to take to
+                    the next level?
+                    <br />
+                    Or probably you are just thinking to start a new league?
+                    Whatever your reasons are, PRZ has your back.
                   </p>
-                  <h3>Set up a league with your own rules</h3>
+                  <p>
+                    Pro Clubs Zone is a league management platform that offers
+                    you tools and features required to run a league.
+                  </p>
+                  <p>
+                    Each league get’s its own invitation link that admins and
+                    clubs managers can share with other players.
+                  </p>
+                </div>
+              </div>
+              <div className="right">
+                <Phone screen={leaguePreview} />
+              </div>
+            </div>
+          </div>
+          <div className="rowTwo">
+            {md && <Phone screen={league} />}
+            <div className="rowContent">
+              {!md ? (
+                <div className="left">
+                  <Phone screen={league} />
+                </div>
+              ) : (
+                <div className="left" />
+              )}
+              <div className="right">
+                <div className="rowText">
+                  <h2>What's in for leagues?</h2>
+                  <h3>League with your own rules</h3>
                   <p>
                     League admins have complete freedom to decide on a number of
                     teams, matches and match times for the league.
@@ -164,22 +173,46 @@ export default class IndexPage extends React.Component {
                     PRZ will take care of player registration, match scheduling,
                     publishing results and statistics.
                   </p>
+                  <h3>Match Conflict resolution</h3>
+                  <p>
+                    If two teams submit different results, league admin will be
+                    able to resolve a conflict with one tap.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="rowThree">
+            <div className="rowContent">
+              <div className="left">
+                <div className="rowText">
+                  <h2>What's in for clubs?</h2>
                   <h3>Effortless match submission</h3>
                   <p>
                     Clubs can submit a match within seconds and PRZ will take
                     care of everything else.
                   </p>
-                  <h3>Match Conflict resolution</h3>
+                  <h3>Roster management</h3>
                   <p>
-                    If two teams submit different result, league admin will be
-                    able to resolve a conflict with one tap.
+                    Have a complete control over your squad and decide who
+                    should stay and who should go.
                   </p>
-                  <h3>In-depth statistics</h3>
-                  <p>Coming Soon.</p>
+                  <h3>Player stats import*</h3>
+                  <p>
+                    After every match, players can submit their stats without
+                    manually typing everything.
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 12,
+                    }}
+                  >
+                    <i>*Available on beta invite</i>
+                  </p>
                 </div>
               </div>
               <div className="right">
-                <Phone screen={league} />
+                <Phone screen={home} />
               </div>
             </div>
           </div>
