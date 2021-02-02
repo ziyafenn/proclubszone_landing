@@ -79,7 +79,12 @@ export default class IndexPage extends React.Component {
               type="image"
               className="button"
               src={google}
-              //      onClick={() => this.handleGooglePlay()}
+              onClick={() => {
+                window.open(
+                  "https://play.google.com/store/apps/details?id=com.proclubszone",
+                  "_self"
+                );
+              }}
             />
           )}
         </div>

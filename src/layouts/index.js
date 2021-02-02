@@ -42,6 +42,7 @@ const Layout = ({ children, data }) => (
         name="twitter:image"
         content="https://storage.googleapis.com/pro-clubs-zone-v2.appspot.com/web/og-image.jpg"
       />
+      <link rel="canonical" href="https://proclubs.zone" />
     </Helmet>
     <div>{children}</div>
   </>
