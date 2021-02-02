@@ -292,7 +292,7 @@ li {
       justify-content: center;
       margin: 0 -2rem 2rem -2rem;
       border-bottom: 2px solid $dark;
-      height: 450px;
+      max-height: 400px;
       overflow: hidden;
       align-items: flex-start;
     }
@@ -362,7 +362,7 @@ li {
       justify-content: center;
       margin: 0 -2rem 2rem -2rem;
       border-bottom: 2px solid $dark;
-      height: 450px;
+      max-height: 400px;
       overflow: hidden;
       align-items: flex-start;
       padding-top: 0;
@@ -530,7 +530,7 @@ li {
   }
   .icons {
     @extend %flex;
-    margin-top: 3rem;
+    margin-top: 1rem;
     justify-content: space-between;
     min-width: 280px;
     max-width: 480px;
@@ -560,6 +560,7 @@ li {
       border: none;
     }
     @media only screen and (max-width: $md) {
+      margin-top: 2rem;
       flex-basis: 50%;
     }
   }

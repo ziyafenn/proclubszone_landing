@@ -137,11 +137,11 @@ export default class IndexPage extends React.Component {
                   </p>
                   <p>
                     Pro Clubs Zone is a league management platform that offers
-                    you tools and features required to run a league.
+                    tools and features required to run a league.
                   </p>
                   <p>
-                    Each league get’s its own invitation link that admins and
-                    clubs managers can share with other players.
+                    Each league gets its own invitation link that admins and
+                    club managers can share with other players.
                   </p>
                 </div>
               </div>
@@ -168,7 +168,7 @@ export default class IndexPage extends React.Component {
                     League admins have complete freedom to decide on a number of
                     teams, matches and match times for the league.
                   </p>
-                  <h3>Let the PRZ do all boring bits</h3>
+                  <h3>Let the PRZ do all routine bits</h3>
                   <p>
                     PRZ will take care of player registration, match scheduling,
                     publishing results and statistics.
@@ -207,7 +207,7 @@ export default class IndexPage extends React.Component {
                       fontSize: 12,
                     }}
                   >
-                    <i>*Available on beta invite</i>
+                    <i>*Available only on beta invite</i>
                   </p>
                 </div>
               </div>
