@@ -20,16 +20,20 @@ export default class IndexPage extends React.Component {
 
     this.state = {
       width: 0,
+      ios: false,
+      android: false,
     };
-  }
-
-  closeModal() {
-    this.setState({ modalIsOpen: false });
   }
 
   componentDidMount() {
     this.handleWindowSizeChange(); // Set width
     window.addEventListener("resize", this.handleWindowSizeChange);
+    if (isIOS) {
+      this.setState({ ios: true });
+    }
+    if (isAndroid) {
+      this.setState({ android: true });
+    }
   }
 
   // make sure to remove the listener
@@ -42,51 +46,42 @@ export default class IndexPage extends React.Component {
     this.setState({ width: window.innerWidth });
   };
 
-  handleGooglePlay() {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "play_store",
-    });
-    window.open(
-      "https://play.google.com/store/apps/details?id=com.proclubszone.app",
-      "_self"
-    );
-  }
-
   render() {
-    const { width } = this.state;
+    const { width, ios, android } = this.state;
     const md = width > 768;
     // the rest is the same...
 
     const appStore = (
       <div className="download">
         <div className="storeButtons">
-          {(!isAndroid || isIOS) && (
-            <input
-              type="image"
-              className="button"
-              src={apple}
-              onClick={() => {
-                window.open(
-                  "itms-apps://apps.apple.com/us/app/pro-clubs-zone/id1551138800",
-                  "_self"
-                );
-              }}
-            />
-          )}
-          {(!isIOS || isAndroid) && (
-            <input
-              type="image"
-              className="button"
-              src={google}
-              onClick={() => {
-                window.open(
-                  "https://play.google.com/store/apps/details?id=com.proclubszone",
-                  "_self"
-                );
-              }}
-            />
-          )}
+          <input
+            type="image"
+            className="button"
+            style={{
+              display: !android ? "unset" : "none",
+            }}
+            src={apple}
+            onClick={() => {
+              window.open(
+                "itms-apps://apps.apple.com/us/app/pro-clubs-zone/id1551138800",
+                "_self"
+              );
+            }}
+          />
+          <input
+            type="image"
+            className="button"
+            style={{
+              display: !ios ? "unset" : "none",
+            }}
+            src={google}
+            onClick={() => {
+              window.open(
+                "https://play.google.com/store/apps/details?id=com.proclubszone",
+                "_self"
+              );
+            }}
+          />
         </div>
       </div>
     );
