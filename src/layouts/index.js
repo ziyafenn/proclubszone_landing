@@ -3,14 +3,14 @@ import { Helmet } from "react-helmet";
 
 // import './index.css'
 
-const title = "Pro Clubs Leagues made easy";
+const title = "Pro Clubs League made easy";
 const description =
   "Create your Pro Clubs league in seconds, share the invitation link with clubs and get started";
 
 const Layout = ({ children, data }) => (
   <>
     <Helmet>
-      <title>Pro Clubs Zone - FIFA Pro Clubs Leagues Made Easy</title>
+      <title>Pro Clubs Zone - FIFA Pro Clubs League Made Easy</title>
       <meta
         name="description"
         content="Create your FIFA Pro Clubs league in seconds, share the invitation link with clubs and get started"
@@ -30,9 +30,11 @@ const Layout = ({ children, data }) => (
         property="og:image"
         content="https://storage.googleapis.com/pro-clubs-zone-v2.appspot.com/web/og-image-fb.jpg"
       />
-      {/* <meta property="fb:app_id" content="365587397242588" /> */}
+      <meta property="fb:app_id" content="3743626142364405" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:locale" content="en_US" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@proclubszone" />
       <meta name="twitter:creator" content="@ziyafenn" />

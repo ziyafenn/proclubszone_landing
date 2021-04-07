@@ -103,7 +103,7 @@ export default class IndexPage extends React.Component {
 
     const description = (
       <div className="description">
-        <h1>Pro Clubs Leagues made easy</h1>
+        <h1>Pro Clubs league made easy</h1>
         <p>
           Create your league in seconds, share the invitation link with clubs
           and get started
@@ -127,7 +127,7 @@ export default class IndexPage extends React.Component {
             <div className="rowContent">
               <div className="left">
                 <div className="rowText">
-                  <h2>Professional league management</h2>
+                  <h2>Professional Pro Clubs league platform</h2>
                   <p>
                     Do you have an established league that you want to take to
                     the next level?
@@ -136,8 +136,8 @@ export default class IndexPage extends React.Component {
                     Whatever your reasons are, PRZ has your back.
                   </p>
                   <p>
-                    Pro Clubs Zone is a league management platform that offers
-                    tools and features required to run a league.
+                    Pro Clubs Zone is a league platform that offers tools and
+                    features required to run and participate in a league.
                   </p>
                   <p>
                     Each league gets its own invitation link that admins and
@@ -168,15 +168,15 @@ export default class IndexPage extends React.Component {
                     League admins have complete freedom to decide on a number of
                     teams, matches and match times for the league.
                   </p>
-                  <h3>Let the PRZ do all routine bits</h3>
+                  <h3>In-depth statistics</h3>
                   <p>
-                    PRZ will take care of player registration, match scheduling,
-                    publishing results and statistics.
+                    PRZ offers full integration with FIFA player performance
+                    stats with just a screenshot upload.
                   </p>
-                  <h3>Match Conflict resolution</h3>
+                  <h3>Complete control over matches</h3>
                   <p>
-                    If two teams submit different results, league admin will be
-                    able to resolve a conflict with one tap.
+                    League admins have complete control over fate of every
+                    match.
                   </p>
                 </div>
               </div>
@@ -194,20 +194,14 @@ export default class IndexPage extends React.Component {
                   </p>
                   <h3>Roster management</h3>
                   <p>
-                    Have a complete control over your squad and decide who
-                    should stay and who should go.
+                    Managers have a complete control over the roster and decide
+                    who should stay and who should go.
                   </p>
-                  <h3>Player stats import*</h3>
+                  <h3>Player stats import</h3>
                   <p>
-                    After every match, players can submit their stats without
-                    manually typing everything.
-                  </p>
-                  <p
-                    style={{
-                      fontSize: 12,
-                    }}
-                  >
-                    <i>*Available only on beta invite</i>
+                    After every match, players can upload an in-game match
+                    screenshot of their player’s performance screen and the
+                    application will add those stats for them.
                   </p>
                 </div>
               </div>
