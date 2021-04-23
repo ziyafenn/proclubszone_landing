@@ -23,7 +23,7 @@ const typography = new Typography({
     },
     {
       name: "Titillium Web",
-      styles: ["400"],
+      styles: ["400", "600"],
     },
   ],
   // See below for the full list of options.

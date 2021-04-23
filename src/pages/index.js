@@ -10,7 +10,10 @@ import logoSmall from "../assets/logo-small.png";
 import facebook from "../assets/icons/facebook.svg";
 import youtube from "../assets/icons/youtube.svg";
 import twitch from "../assets/icons/twitch-alt.svg";
+import discord from "../assets/icons/discord.svg";
 import twitter from "../assets/icons/twitter.svg";
+import check from "../assets/icons/check.svg";
+import nocheck from "../assets/icons/no-check.svg";
 import { isAndroid, isIOS } from "react-device-detect";
 import Layout from "../layouts/index";
 
@@ -103,7 +106,7 @@ export default class IndexPage extends React.Component {
 
     const description = (
       <div className="description">
-        <h1>Pro Clubs league made easy</h1>
+        <h1>Professional Pro Clubs League Platform</h1>
         <p>
           Create your league in seconds, share the invitation link with clubs
           and get started
@@ -123,11 +126,22 @@ export default class IndexPage extends React.Component {
           </div>
         </div>
         <div className="content">
+          <div className="promoVideo">
+            <iframe
+              width="640"
+              height="360"
+              src="https://www.youtube.com/embed/xYaddASqa2Q"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
           <div className="rowOne">
             <div className="rowContent">
               <div className="left">
                 <div className="rowText">
-                  <h2>Professional Pro Clubs league platform</h2>
+                  <h2>Pro Clubs league made easy</h2>
                   <p>
                     Do you have an established league that you want to take to
                     the next level?
@@ -145,8 +159,108 @@ export default class IndexPage extends React.Component {
                   </p>
                 </div>
               </div>
-              <div className="right">
-                <Phone screen={leaguePreview} />
+              <div className="right" style={{ maxHeight: "none" }}>
+                <div className="tableContainer">
+                  <table id="data">
+                    <colgroup>
+                      <col span="1" style={{ width: "40%" }} />
+                      <col span="1" style={{ width: "20%" }} />
+                      <col span="1" sstyle={{ width: "20%" }} />
+                      <col span="1" style={{ width: "20%" }} />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th colspan="1" />
+                        <th colspan="1" className="tableCell">
+                          {`ProClubs\nZone`}
+                        </th>
+                        <th
+                          colspan="1"
+                          className="tableCell"
+                        >{`League\nRepublic`}</th>
+                        <th colspan="1" className="tableCell">
+                          VPG
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Platform for independent leagues</td>
+                        <td className="tableCell">
+                          <img src={check} style={{ margin: 0 }} />
+                        </td>
+                        <td className="tableCell">
+                          {" "}
+                          <img src={check} style={{ margin: 0 }} />
+                        </td>
+                        <td className="tableCell">
+                          {" "}
+                          <img src={nocheck} style={{ margin: 0 }} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tailored for Pro Clubs only</td>
+                        <td className="tableCell">
+                          <img src={check} style={{ margin: 0 }} />
+                        </td>
+                        <td className="tableCell">
+                          <img src={nocheck} style={{ margin: 0 }} />
+                        </td>
+                        <td className="tableCell">
+                          <img src={nocheck} style={{ margin: 0 }} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Complete FIFA stats integration</td>
+                        <td className="tableCell">
+                          <img src={check} style={{ margin: 0 }} />
+                        </td>
+                        <td className="tableCell">
+                          <img src={nocheck} style={{ margin: 0 }} />
+                        </td>
+                        <td className="tableCell">
+                          <img src={nocheck} style={{ margin: 0 }} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Players submit their own stats</td>
+                        <td className="tableCell">
+                          <img src={check} style={{ margin: 0 }} />
+                        </td>
+                        <td className="tableCell">
+                          <img src={nocheck} style={{ margin: 0 }} />
+                        </td>
+                        <td className="tableCell">
+                          <img src={nocheck} style={{ margin: 0 }} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>For iOS and Android</td>
+                        <td className="tableCell">
+                          <img src={check} style={{ margin: 0 }} />
+                        </td>
+                        <td className="tableCell">
+                          <img src={nocheck} style={{ margin: 0 }} />
+                        </td>
+                        <td className="tableCell">
+                          <img src={check} style={{ margin: 0 }} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>No ads and in-app purchases</td>
+                        <td className="tableCell">
+                          <img src={check} style={{ margin: 0 }} />
+                        </td>
+                        <td className="tableCell">
+                          <img src={nocheck} style={{ margin: 0 }} />
+                        </td>
+                        <td className="tableCell">
+                          <img src={nocheck} style={{ margin: 0 }} />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
@@ -237,6 +351,11 @@ export default class IndexPage extends React.Component {
                     icon={twitch}
                     name="Twitch"
                     href="https://www.twitch.tv/proclubszone"
+                  />
+                  <SocialIcon
+                    icon={discord}
+                    name="Discord"
+                    href="https://discord.gg/bEdPt6ec4Y"
                   />
                 </div>
               </div>

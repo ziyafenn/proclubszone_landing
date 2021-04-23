@@ -3,14 +3,16 @@ import { Helmet } from "react-helmet";
 
 // import './index.css'
 
-const title = "Pro Clubs League made easy";
+const title = "Professional Pro Clubs League Platform";
 const description =
   "Create your Pro Clubs league in seconds, share the invitation link with clubs and get started";
 
 const Layout = ({ children, data }) => (
   <>
     <Helmet>
-      <title>Pro Clubs Zone - FIFA Pro Clubs League Made Easy</title>
+      <title>
+        Pro Clubs Zone - Professional FIFA Pro Clubs League Platform
+      </title>
       <meta
         name="description"
         content="Create your FIFA Pro Clubs league in seconds, share the invitation link with clubs and get started"

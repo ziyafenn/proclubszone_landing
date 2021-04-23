@@ -162,6 +162,7 @@ li {
   @extend %flex;
   flex-direction: column;
   justify-content: flex-end;
+  max-width: 640px;
   padding: 0 3rem 0 3rem;
   @media only screen and (max-width: $s) {
     padding: 0 1rem 0 1rem;
@@ -184,7 +185,7 @@ li {
   justify-content: center;
   align-items: center;
   .storeButtons {
-    @extend %flex;
+    display: flex;
     justify-content: center;
     height: 48px;
     margin: 24px 0 24px;
@@ -514,6 +515,7 @@ li {
     max-width: 800px;
     padding-left: 0;
     padding-right: 0;
+    justify-content: center;
   }
 }
 
@@ -751,8 +753,39 @@ li {
 
 .auth {
   align-self: center;
-  padding: 48px;
+  padding: 3rem;
   h3 {
     text-align: center;
   }
+}
+
+.promoVideo {
+  @extend %flex;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.tableCell {
+  text-align: center;
+}
+
+.tableContainer {
+  border-left: 1px solid hsla(0, 0%, 0%, 0.12);
+  padding-left: 3rem;
+  width: 90%;
+  @media only screen and (max-width: $md) {
+    padding: 0;
+    border: 0;
+    width: 90%;
+  }
+}
+
+#data {
+  @media only screen and (max-width: $s) {
+    font-size: 0.75rem;
+  }
+}
+
+#data tbody > tr:last-child > td {
+  border-bottom: 0;
 }
